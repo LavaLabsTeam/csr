@@ -1,0 +1,67 @@
+
+<div *ngIf="merchant">
+    <h2><span jhiTranslate="csrApp.merchant.detail.title">Merchant</span> {{merchant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="csrApp.merchant.name">Name</span></dt>
+        <dd>
+            <span>{{merchant.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.phone">Phone</span></dt>
+        <dd>
+            <span>{{merchant.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.address">Address</span></dt>
+        <dd>
+            <span>{{merchant.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.login">Login</span></dt>
+        <dd>
+            <span>{{merchant.login}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.password">Password</span></dt>
+        <dd>
+            <span>{{merchant.password}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.firstName">First Name</span></dt>
+        <dd>
+            <span>{{merchant.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{merchant.lastName}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.email">Email</span></dt>
+        <dd>
+            <span>{{merchant.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.imageUrl">Image Url</span></dt>
+        <dd>
+            <span>{{merchant.imageUrl}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchant.photo">Photo</span></dt>
+        <dd>
+            <div *ngIf="merchant.photo">
+                <a (click)="openFile(merchant.photoContentType, merchant.photo)">
+                    <img [src]="'data:' + merchant.photoContentType + ';base64,' + merchant.photo" style="max-width: 100%;" alt="merchant image"/>
+                </a>
+                {{merchant.photoContentType}}, {{byteSize(merchant.photo)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'merchant/'+ merchant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

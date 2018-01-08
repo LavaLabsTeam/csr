@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "userMerchant"
+        },
+        {
+            "relationshipName": "merchant",
+            "otherEntityName": "merchant",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20171226115652",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "user_merchant",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

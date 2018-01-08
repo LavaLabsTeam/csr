@@ -1,0 +1,30 @@
+{
+    "csrApp": {
+        "merchantPackage" : {
+            "home": {
+                "title": "Merchant Packages",
+                "createLabel": "Create a new Merchant Package",
+                "createOrEditLabel": "Create or edit a Merchant Package"
+            },
+            "created": "A new Merchant Package is created with identifier {{ param }}",
+            "updated": "A Merchant Package is updated with identifier {{ param }}",
+            "deleted": "A Merchant Package is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Merchant Package {{ id }}?"
+            },
+            "detail": {
+                "title": "Merchant Package"
+            },
+            "name": "Name",
+            "description": "Description",
+            "packageIncludes": "Package Includes",
+            "termsAndCondition": "Terms And Condition",
+            "price": "Price",
+            "oldPrice": "Old Price",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "photo": "Photo",
+            "merchant": "Merchant"
+        }
+    }
+}

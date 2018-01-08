@@ -1,0 +1,22 @@
+{
+    "csrApp": {
+        "userMerchant" : {
+            "home": {
+                "title": "User Merchants",
+                "createLabel": "Create a new User Merchant",
+                "createOrEditLabel": "Create or edit a User Merchant"
+            },
+            "created": "A new User Merchant is created with identifier {{ param }}",
+            "updated": "A User Merchant is updated with identifier {{ param }}",
+            "deleted": "A User Merchant is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete User Merchant {{ id }}?"
+            },
+            "detail": {
+                "title": "User Merchant"
+            },
+            "user": "User",
+            "merchant": "Merchant"
+        }
+    }
+}
