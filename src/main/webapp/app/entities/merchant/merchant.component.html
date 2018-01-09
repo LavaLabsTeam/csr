@@ -27,6 +27,9 @@
             <th><span jhiTranslate="csrApp.merchant.email">Email</span></th>
             <th><span jhiTranslate="csrApp.merchant.imageUrl">Image Url</span></th>
             <th><span jhiTranslate="csrApp.merchant.photo">Photo</span></th>
+            <th><span jhiTranslate="csrApp.merchant.about">About</span></th>
+            <th><span jhiTranslate="csrApp.merchant.ableToTravel">Able To Travel</span></th>
+            <th><span jhiTranslate="csrApp.merchant.location">Location</span></th>
             <th></th>
             </tr>
             </thead>
@@ -48,6 +51,9 @@
                     </a>
                     <span *ngIf="merchant.photo">{{merchant.photoContentType}}, {{byteSize(merchant.photo)}}</span>
                 </td>
+                <td>{{merchant.about}}</td>
+                <td>{{merchant.ableToTravel}}</td>
+                <td>{{merchant.location}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

@@ -24,7 +24,10 @@
             "lastName": "Last Name",
             "email": "Email",
             "imageUrl": "Image Url",
-            "photo": "Photo"
+            "photo": "Photo",
+            "about": "About",
+            "ableToTravel": "Able To Travel",
+            "location": "Location"
         }
     }
 }

@@ -43,6 +43,18 @@
             "fieldName": "photo",
             "fieldType": "byte[]",
             "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "about",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ableToTravel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20171226114840",

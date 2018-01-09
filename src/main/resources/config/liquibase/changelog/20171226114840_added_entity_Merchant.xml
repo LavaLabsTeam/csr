@@ -65,6 +65,18 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="about" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="able_to_travel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="location" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         

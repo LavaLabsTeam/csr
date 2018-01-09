@@ -56,6 +56,15 @@ public class Merchant implements Serializable {
     @Column(name = "photo_content_type")
     private String photoContentType;
 
+    @Column(name = "about")
+    private String about;
+
+    @Column(name = "able_to_travel")
+    private String ableToTravel;
+
+    @Column(name = "location")
+    private String location;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -207,6 +216,45 @@ public class Merchant implements Serializable {
     public void setPhotoContentType(String photoContentType) {
         this.photoContentType = photoContentType;
     }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public Merchant about(String about) {
+        this.about = about;
+        return this;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public String getAbleToTravel() {
+        return ableToTravel;
+    }
+
+    public Merchant ableToTravel(String ableToTravel) {
+        this.ableToTravel = ableToTravel;
+        return this;
+    }
+
+    public void setAbleToTravel(String ableToTravel) {
+        this.ableToTravel = ableToTravel;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public Merchant location(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -244,6 +292,9 @@ public class Merchant implements Serializable {
             ", imageUrl='" + getImageUrl() + "'" +
             ", photo='" + getPhoto() + "'" +
             ", photoContentType='" + getPhotoContentType() + "'" +
+            ", about='" + getAbout() + "'" +
+            ", ableToTravel='" + getAbleToTravel() + "'" +
+            ", location='" + getLocation() + "'" +
             "}";
     }
 }

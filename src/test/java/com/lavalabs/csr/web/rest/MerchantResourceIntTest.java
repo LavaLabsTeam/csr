@@ -75,6 +75,15 @@ public class MerchantResourceIntTest {
     private static final String DEFAULT_PHOTO_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_PHOTO_CONTENT_TYPE = "image/png";
 
+    private static final String DEFAULT_ABOUT = "AAAAAAAAAA";
+    private static final String UPDATED_ABOUT = "BBBBBBBBBB";
+
+    private static final String DEFAULT_ABLE_TO_TRAVEL = "AAAAAAAAAA";
+    private static final String UPDATED_ABLE_TO_TRAVEL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LOCATION = "AAAAAAAAAA";
+    private static final String UPDATED_LOCATION = "BBBBBBBBBB";
+
     @Autowired
     private MerchantRepository merchantRepository;
 
@@ -136,7 +145,10 @@ public class MerchantResourceIntTest {
             .email(DEFAULT_EMAIL)
             .imageUrl(DEFAULT_IMAGE_URL)
             .photo(DEFAULT_PHOTO)
-            .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE);
+            .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE)
+            .about(DEFAULT_ABOUT)
+            .ableToTravel(DEFAULT_ABLE_TO_TRAVEL)
+            .location(DEFAULT_LOCATION);
         return merchant;
     }
 
@@ -171,6 +183,9 @@ public class MerchantResourceIntTest {
         assertThat(testMerchant.getImageUrl()).isEqualTo(DEFAULT_IMAGE_URL);
         assertThat(testMerchant.getPhoto()).isEqualTo(DEFAULT_PHOTO);
         assertThat(testMerchant.getPhotoContentType()).isEqualTo(DEFAULT_PHOTO_CONTENT_TYPE);
+        assertThat(testMerchant.getAbout()).isEqualTo(DEFAULT_ABOUT);
+        assertThat(testMerchant.getAbleToTravel()).isEqualTo(DEFAULT_ABLE_TO_TRAVEL);
+        assertThat(testMerchant.getLocation()).isEqualTo(DEFAULT_LOCATION);
     }
 
     @Test
@@ -213,7 +228,10 @@ public class MerchantResourceIntTest {
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
             .andExpect(jsonPath("$.[*].imageUrl").value(hasItem(DEFAULT_IMAGE_URL.toString())))
             .andExpect(jsonPath("$.[*].photoContentType").value(hasItem(DEFAULT_PHOTO_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))));
+            .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))))
+            .andExpect(jsonPath("$.[*].about").value(hasItem(DEFAULT_ABOUT.toString())))
+            .andExpect(jsonPath("$.[*].ableToTravel").value(hasItem(DEFAULT_ABLE_TO_TRAVEL.toString())))
+            .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())));
     }
 
     @Test
@@ -237,7 +255,10 @@ public class MerchantResourceIntTest {
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
             .andExpect(jsonPath("$.imageUrl").value(DEFAULT_IMAGE_URL.toString()))
             .andExpect(jsonPath("$.photoContentType").value(DEFAULT_PHOTO_CONTENT_TYPE))
-            .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)));
+            .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)))
+            .andExpect(jsonPath("$.about").value(DEFAULT_ABOUT.toString()))
+            .andExpect(jsonPath("$.ableToTravel").value(DEFAULT_ABLE_TO_TRAVEL.toString()))
+            .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()));
     }
 
     @Test
@@ -271,7 +292,10 @@ public class MerchantResourceIntTest {
             .email(UPDATED_EMAIL)
             .imageUrl(UPDATED_IMAGE_URL)
             .photo(UPDATED_PHOTO)
-            .photoContentType(UPDATED_PHOTO_CONTENT_TYPE);
+            .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
+            .about(UPDATED_ABOUT)
+            .ableToTravel(UPDATED_ABLE_TO_TRAVEL)
+            .location(UPDATED_LOCATION);
 
         restMerchantMockMvc.perform(put("/api/merchants")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -293,6 +317,9 @@ public class MerchantResourceIntTest {
         assertThat(testMerchant.getImageUrl()).isEqualTo(UPDATED_IMAGE_URL);
         assertThat(testMerchant.getPhoto()).isEqualTo(UPDATED_PHOTO);
         assertThat(testMerchant.getPhotoContentType()).isEqualTo(UPDATED_PHOTO_CONTENT_TYPE);
+        assertThat(testMerchant.getAbout()).isEqualTo(UPDATED_ABOUT);
+        assertThat(testMerchant.getAbleToTravel()).isEqualTo(UPDATED_ABLE_TO_TRAVEL);
+        assertThat(testMerchant.getLocation()).isEqualTo(UPDATED_LOCATION);
     }
 
     @Test

@@ -14,6 +14,9 @@ export class Merchant implements BaseEntity {
         public imageUrl?: string,
         public photoContentType?: string,
         public photo?: any,
+        public about?: string,
+        public ableToTravel?: string,
+        public location?: string,
     ) {
     }
 }
