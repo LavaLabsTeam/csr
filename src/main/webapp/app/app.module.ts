@@ -11,8 +11,6 @@ import { LandingComponent } from './public/landing/landing.component';
 import { MerchantComponent } from './public/merchant/merchant.component';
 import { PackageComponent } from './public/package/package.component';
 
-
-
 @NgModule({
     imports: [
         BrowserModule,
@@ -29,11 +27,8 @@ import { PackageComponent } from './public/package/package.component';
         LandingComponent,
         MerchantComponent,
         PackageComponent
-       
     ],
-    providers: [
-       
-    ],
+    providers: [],
     bootstrap: [ AppComponent ]
 })
 export class CsrAppModule {}

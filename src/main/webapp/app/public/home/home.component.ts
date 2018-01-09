@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    selector: 'csr-home',
+    selector: 'jhi-home',
     templateUrl: './home.component.html',
     styleUrls: [
         './home.scss'
@@ -10,15 +9,10 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 })
 export class HomeComponent implements OnInit {
-   
-
-    constructor(
-     
-    ) {
+    constructor() {
     }
 
     ngOnInit() {
-       
-    }
 
+    }
 }

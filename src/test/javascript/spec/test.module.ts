@@ -1,9 +1,8 @@
-import { NgModule, ElementRef, Renderer } from '@angular/core';
-
+import { NgModule } from '@angular/core';
 
 @NgModule({
     providers: [
-        
+
     ]
 })
 export class CsrTestModule {}
