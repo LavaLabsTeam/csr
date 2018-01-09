@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'jhi-header',
   templateUrl: './header.component.html',
-  styles: []
+  styleUrls: ['./header.scss']
 })
 export class HeaderComponent implements OnInit {
 
