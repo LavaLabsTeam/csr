@@ -1,8 +1,7 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { ProdConfig } from './blocks/config/prod.config';
 import { CsrAppModule } from './app.module';
 
-ProdConfig();
+//ProdConfig();
 
 if (module['hot']) {
     module['hot'].accept();
