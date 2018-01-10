@@ -18,7 +18,7 @@ import { PackageComponent } from './public/package/package.component';
         AppRoutingModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [ 
+    declarations: [
         AppComponent,
         HomeComponent,
         HeaderComponent,

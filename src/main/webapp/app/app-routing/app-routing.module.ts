@@ -1,4 +1,6 @@
-import { PackageComponent } from '/public/package/package.component';
+
+import { PackageComponent } from './../public/package/package.component';
+import { LandingComponent } from './../public/landing/landing.component';
 import { HomeComponent } from './../public/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
