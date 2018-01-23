@@ -1,9 +1,12 @@
 package com.lavalabs.csr.repository;
 
 import com.lavalabs.csr.domain.Merchant;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
+
+import java.util.List;
 
 
 /**
@@ -13,4 +16,6 @@ import org.springframework.data.jpa.repository.*;
 @Repository
 public interface MerchantRepository extends JpaRepository<Merchant, Long> {
 
+    @Query("from Merchant m where lower(m.name) like %:query%")
+    List<Merchant> searchMerchant(@Param("query") String query);
 }
