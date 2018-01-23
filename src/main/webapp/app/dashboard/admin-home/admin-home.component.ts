@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'jhi-admin-home',
   templateUrl: './admin-home.component.html',
-  styles: []
+  styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
 

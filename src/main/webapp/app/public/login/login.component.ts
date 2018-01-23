@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'jhi-login',
   templateUrl: './login.component.html',
-  styles: []
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 

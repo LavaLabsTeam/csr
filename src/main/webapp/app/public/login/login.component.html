@@ -1,3 +1,39 @@
-<p>
-  login works!
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSR project</title>
+  </head>
+
+
+  <body class="background-img" [background]="'/content/images/dashboard/backgroundimage.png'">
+  <h1 class="h1">CSR</h1>
+  <div class="header-login">
+    <h2 class="h2"> CSRPROJECT</h2>
+    <img class="admin-icon" [src]="'/content/images/dashboard/admin-icon-2@2x.png'" alt="adminpanel">
+    <h3 class="h3">Admin panel </h3>
+    <br>
+    <hr class="style1">
+    <br>
+  </div>
+  <form>
+    <div class="login-form">
+      <div class="username">
+        <label for="email"></label>
+        <input class="loginform-text" id="email" type="email" name="field2" placeholder="Email" required>
+      </div>
+      <div class="password">
+        <label for="password"></label>
+        <input class="loginform-text" id="password" name="password" placeholder="password" class="form-control" type="password" required>
+      </div>
+      <div class="login-button">
+        <button class="login-click" type="LOGIN" name="button"></button>
+        <h1 class="login-text"> LOGIN</h1>
+        <button class="forgot-password"  name="button"> forgot password?</button>
+      </div>
+    </div>
+  </form>
+
+
+  </body>
+</html>
