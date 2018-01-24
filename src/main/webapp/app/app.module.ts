@@ -22,12 +22,14 @@ import { AdminPackageComponent } from './dashboard/admin-package/admin-package.c
 import { AddMerchantComponent } from './dashboard/admin-merchant/add-merchant/add-merchant.component';
 import { AddCategoryComponent } from './dashboard/admin-category/add-category/add-category.component';
 import { AddPackageComponent } from './dashboard/admin-package/add-package/add-package.component';
+import { AlertModule } from 'ngx-bootstrap';
 
 @NgModule({
     imports: [
         BrowserModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
-        AppRoutingModule
+        AppRoutingModule,
+        AlertModule.forRoot()
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
