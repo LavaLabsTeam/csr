@@ -1,0 +1,86 @@
+ /*this end of left-bar*/
+ .left-bar{
+    background: -moz-linear-gradient(268deg, rgba(52,52,52,1) 0%, rgba(72,108,116,1) 100%); /* ff3.6+ */
+    background: -webkit-linear-gradient(268deg, rgba(52,52,52,1) 0%, rgba(72,108,116,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(268deg, rgba(52,52,52,1) 0%, rgba(72,108,116,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(268deg, rgba(52,52,52,1) 0%, rgba(72,108,116,1) 100%); /* ie10+ */
+    background: linear-gradient(182deg, rgba(52,52,52,1) 0%, rgba(72,108,116,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#343434', endColorstr='#486C74',GradientType=0 ); /* ie6-9 */
+    width: 200px;
+    height: 803px;
+    position: absolute;
+    top:0px;
+    left: 0px;
+  }
+
+
+  .h1{
+    font-family: cursive;
+    font-weight: lighter;
+    font-size: 45px;
+    color: white;
+    position: absolute;
+    left: 25%;
+    top:10px;
+    border: none;
+    background-color: Transparent;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  .h1:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .admin-icon{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 40%;
+    top: 90px;
+  }
+  .vert-line{
+    position: absolute;
+    top: 150px;
+    left: 0%;
+    width: 99%;
+    border-bottom: gray;
+  
+  }
+  .button-div{
+    position: absolute;
+    top: 180px;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+  .button-h{
+    border: none;
+    background-color: Transparent;
+    color: white;
+    line-height: 250%;
+    font-size: 15px;
+    width:150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  .button-h:hover{
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+   width: 100px;
+  
+  }
+  .button-h:active{
+   background-color: black;
+  }
+
+  .choosen-category{
+   width: 200px;
+   height: 40px;
+   position: absolute;
+   top: 180px;
+   background-color: black;opacity:0.1;
+  }
+  /*this end of left-bar*/
