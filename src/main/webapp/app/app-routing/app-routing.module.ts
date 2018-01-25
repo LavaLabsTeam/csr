@@ -2,7 +2,6 @@ import { AddCategoryComponent } from './../dashboard/admin-category/add-category
 import { AddPackageComponent } from './../dashboard/admin-package/add-package/add-package.component';
 import { AddMerchantComponent } from './../dashboard/admin-merchant/add-merchant/add-merchant.component';
 import { AdminPackageComponent } from './../dashboard/admin-package/admin-package.component';
-import { AdminHeaderComponent } from './../dashboard/layout/admin-header/admin-header.component';
 import { AdminContentComponent } from './../dashboard/layout/admin-content/admin-content.component';
 import { LoginComponent } from './../public/login/login.component';
 

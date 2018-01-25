@@ -1,3 +1,6 @@
+import { TokenInterceptor } from './auth/token-interceptor';
+import { AuthenticationService } from './auth/authentication.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 import { HomeComponent } from './public/home/home.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NgModule } from '@angular/core';
@@ -23,6 +26,7 @@ import { AddMerchantComponent } from './dashboard/admin-merchant/add-merchant/ad
 import { AddCategoryComponent } from './dashboard/admin-category/add-category/add-category.component';
 import { AddPackageComponent } from './dashboard/admin-package/add-package/add-package.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
     imports: [
@@ -54,7 +58,15 @@ import { AlertModule } from 'ngx-bootstrap';
         AddCategoryComponent,
         AddPackageComponent
     ],
-    providers: [],
+    providers: [
+        AuthGuardService,
+        AuthenticationService,
+        {
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+        }
+    ],
     bootstrap: [ AppComponent ]
 })
 export class CsrAppModule {}

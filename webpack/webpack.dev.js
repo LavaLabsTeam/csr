@@ -9,8 +9,10 @@ const utils = require('./utils.js');
 const commonConfig = require('./webpack.common.js');
 
 const ENV = 'development';
+const SERVER_API_URL = `"http://127.0.0.1:8080"`;
 
-module.exports = webpackMerge(commonConfig({ env: ENV }), {
+
+module.exports = webpackMerge(commonConfig({ env: ENV, baseUrl: SERVER_API_URL}), {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './target/www',
