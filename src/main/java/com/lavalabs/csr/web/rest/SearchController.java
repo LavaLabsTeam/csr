@@ -37,5 +37,17 @@ public class SearchController {
         return searchService.search(query, location, true);
     }
 
+    /**
+     * GET  /admin-search : get all the matched results.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of matched result in body
+     */
+    @GetMapping("/search")
+    @Timed
+    public SearchResponseVM search(@RequestParam("query") String query, @RequestParam(name = "location", required = false) String location) {
+        log.debug("REST request for adming search");
+        return searchService.search(query, location, false);
+    }
+
 
 }
