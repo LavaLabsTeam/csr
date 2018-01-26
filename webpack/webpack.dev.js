@@ -9,7 +9,7 @@ const utils = require('./utils.js');
 const commonConfig = require('./webpack.common.js');
 
 const ENV = 'development';
-const SERVER_API_URL = `"http://127.0.0.1:8080"`;
+const SERVER_API_URL = `"http://localhost:8080/api"`;
 
 
 module.exports = webpackMerge(commonConfig({ env: ENV, baseUrl: SERVER_API_URL}), {

@@ -1,3 +1,4 @@
+import { UserMerchantService } from './public/merchant/user-merchant.service';
 import { TokenInterceptor } from './auth/token-interceptor';
 import { AuthenticationService } from './auth/authentication.service';
 import { AuthGuardService } from './auth/auth-guard.service';
@@ -27,13 +28,17 @@ import { AddCategoryComponent } from './dashboard/admin-category/add-category/ad
 import { AddPackageComponent } from './dashboard/admin-package/add-package/add-package.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
     imports: [
         BrowserModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         AppRoutingModule,
-        AlertModule.forRoot()
+        AlertModule.forRoot(),
+        HttpClientModule,
+        HttpModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -60,6 +65,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ],
     providers: [
         AuthGuardService,
+        UserMerchantService,
         AuthenticationService,
         {
         provide: HTTP_INTERCEPTORS,

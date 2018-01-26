@@ -20,9 +20,9 @@
         <input class="loginform-text" id="password" name="password" placeholder="password" class="form-control" type="password" required>
       </div>
       <div class="login-button">
-        <button class="login-click" type="LOGIN" name="button"></button>
+        <button class="login-click" type="LOGIN" name="button" (click)="onLoginClicked()"></button>
         <h1 class="login-text"> LOGIN</h1>
-        <button class="forgot-password"  name="button"> forgot password?</button>
+        <button class="forgot-password"  name="button" (click)="onForgotClicked()"> forgot password?</button>
       </div>
     </div>
   </form>

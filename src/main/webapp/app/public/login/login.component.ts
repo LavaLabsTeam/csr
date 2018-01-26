@@ -1,3 +1,5 @@
+import { UserMerchantService } from './../merchant/user-merchant.service';
+import { AuthenticationService } from './../../auth/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthenticationService, private userMerchantService: UserMerchantService) {
+  }
 
   ngOnInit() {
+  }
+
+  onLoginClicked() {
+    this.auth.loginAdmin({username: 'admin', password: 'admin'}).subscribe((res: any) => {
+      console.log(res);
+    });
+  }
+
+  onForgotClicked() {
+    this.userMerchantService.getAll().subscribe((res: any) => {
+      console.log(res);
+    });
   }
 
 }
