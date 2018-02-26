@@ -110,6 +110,23 @@ public class MerchantPackageResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(merchantPackage));
     }
 
+
+    /**
+     * GET  /merchant-packages-by-category/:categoryId : get the "categoryId" merchantPackage.
+     *
+     * @param categoryId the id of the merchantPackage to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the merchantPackage, or with status 404 (Not Found)
+     */
+    @GetMapping("/merchant-packages-by-category/{categoryId}")
+    @Timed
+    public ResponseEntity<List<MerchantPackage>> getMerchantPackagesByCategory(@PathVariable Long categoryId) {
+        log.debug("REST request to get MerchantPackage : {}", categoryId);
+        List<MerchantPackage> merchantPackage = merchantPackageService.findAllByCategoryId(categoryId);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(merchantPackage));
+    }
+
+
+
     /**
      * DELETE  /merchant-packages/:id : delete the "id" merchantPackage.
      *

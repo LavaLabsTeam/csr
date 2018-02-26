@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 /**
  * Service Implementation for managing MerchantPackage.
@@ -68,5 +70,9 @@ public class MerchantPackageService {
     public void delete(Long id) {
         log.debug("Request to delete MerchantPackage : {}", id);
         merchantPackageRepository.delete(id);
+    }
+
+    public List<MerchantPackage> findAllByCategoryId(Long categoryId) {
+        return merchantPackageRepository.findAllByCategoryId(categoryId);
     }
 }

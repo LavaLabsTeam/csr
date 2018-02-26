@@ -24,7 +24,8 @@
             "startDate": "Start Date",
             "endDate": "End Date",
             "photo": "Photo",
-            "merchant": "Merchant"
+            "merchant": "Merchant",
+            "category": "Category"
         }
     }
 }

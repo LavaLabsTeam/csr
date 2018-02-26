@@ -59,6 +59,9 @@ public class MerchantPackage implements Serializable {
     @ManyToOne
     private Merchant merchant;
 
+    @ManyToOne
+    private Category category;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -209,6 +212,19 @@ public class MerchantPackage implements Serializable {
 
     public void setMerchant(Merchant merchant) {
         this.merchant = merchant;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public MerchantPackage category(Category category) {
+        this.category = category;
+        return this;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

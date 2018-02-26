@@ -18,4 +18,6 @@ public interface MerchantPackageRepository extends JpaRepository<MerchantPackage
 
     @Query("from MerchantPackage mp where lower(mp.name) like %:query%")
     List<MerchantPackage> searchMerchantPackage(@Param("query") String query);
+
+    List<MerchantPackage> findAllByCategoryId(Long categoryId);
 }

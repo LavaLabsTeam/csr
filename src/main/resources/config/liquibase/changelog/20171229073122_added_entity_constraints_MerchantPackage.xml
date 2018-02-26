@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="merchant"/>
 
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="merchant_package"
+                                 constraintName="fk_merchant_package_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="category"/>
+
     </changeSet>
 </databaseChangeLog>

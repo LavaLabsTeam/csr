@@ -1,0 +1,75 @@
+
+<div *ngIf="merchantPackage">
+    <h2><span jhiTranslate="csrApp.merchantPackage.detail.title">Merchant Package</span> {{merchantPackage.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="csrApp.merchantPackage.name">Name</span></dt>
+        <dd>
+            <span>{{merchantPackage.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.description">Description</span></dt>
+        <dd>
+            <span>{{merchantPackage.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.packageIncludes">Package Includes</span></dt>
+        <dd>
+            <span>{{merchantPackage.packageIncludes}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.termsAndCondition">Terms And Condition</span></dt>
+        <dd>
+            <span>{{merchantPackage.termsAndCondition}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.price">Price</span></dt>
+        <dd>
+            <span>{{merchantPackage.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.oldPrice">Old Price</span></dt>
+        <dd>
+            <span>{{merchantPackage.oldPrice}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{merchantPackage.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.endDate">End Date</span></dt>
+        <dd>
+            <span>{{merchantPackage.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.photo">Photo</span></dt>
+        <dd>
+            <div *ngIf="merchantPackage.photo">
+                <a (click)="openFile(merchantPackage.photoContentType, merchantPackage.photo)">
+                    <img [src]="'data:' + merchantPackage.photoContentType + ';base64,' + merchantPackage.photo" style="max-width: 100%;" alt="merchantPackage image"/>
+                </a>
+                {{merchantPackage.photoContentType}}, {{byteSize(merchantPackage.photo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.merchant">Merchant</span></dt>
+        <dd>
+            <div *ngIf="merchantPackage.merchant">
+                <a [routerLink]="['/merchant', merchantPackage.merchant?.id]">{{merchantPackage.merchant?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="csrApp.merchantPackage.category">Category</span></dt>
+        <dd>
+            <div *ngIf="merchantPackage.category">
+                <a [routerLink]="['/category', merchantPackage.category?.id]">{{merchantPackage.category?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'merchant-package/'+ merchantPackage.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
