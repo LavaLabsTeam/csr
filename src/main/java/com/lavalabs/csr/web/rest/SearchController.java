@@ -24,19 +24,6 @@ public class SearchController {
     }
 
 
-
-    /**
-     * GET  /admin-search : get all the matched results.
-     *
-     * @return the ResponseEntity with status 200 (OK) and the list of matched result in body
-     */
-    @GetMapping("/api/admin-search")
-    @Timed
-    public SearchResponseVM adminSearch(@RequestParam("query") String query, @RequestParam(name = "location", required = false) String location) {
-        log.debug("REST request for adming search");
-        return searchService.search(query, location, true);
-    }
-
     /**
      * GET  /admin-search : get all the matched results.
      *
@@ -44,10 +31,9 @@ public class SearchController {
      */
     @GetMapping("/search")
     @Timed
-    public SearchResponseVM search(@RequestParam("query") String query, @RequestParam(name = "location", required = false) String location) {
+    public SearchResponseVM search(@RequestParam("categoryId") Long categoryId, @RequestParam(name = "name", required = false) String name, @RequestParam(name = "location", required = false) String location) {
         log.debug("REST request for adming search");
-        return searchService.search(query, location, false);
+        return searchService.search(categoryId, name, location);
     }
-
 
 }

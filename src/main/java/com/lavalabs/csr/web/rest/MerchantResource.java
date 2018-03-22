@@ -69,8 +69,9 @@ public class MerchantResource {
             throw new BadRequestAlertException("A new merchant cannot already have an ID", ENTITY_NAME, "idexists");
         }
 
+        // New Requirement 22nd March : Merchants cannot login anymore
         //Create a user
-        if (!AccountResource.checkPasswordLength(merchant.getPassword())) {
+     /* if (!AccountResource.checkPasswordLength(merchant.getPassword())) {
             throw new InvalidPasswordException();
         }
         userRepository.findOneByLogin(merchant.getLogin().toLowerCase()).ifPresent(u -> {throw new LoginAlreadyUsedException();});
@@ -86,7 +87,7 @@ public class MerchantResource {
 
         User user = userService.registerUser(managedUserVM, managedUserVM.getPassword());
         log.debug("User registered : {}", user);
-        mailService.sendActivationEmail(user);
+        mailService.sendActivationEmail(user);*/
 
         Merchant result = merchantService.save(merchant);
         return ResponseEntity.created(new URI("/api/merchants/" + result.getId()))

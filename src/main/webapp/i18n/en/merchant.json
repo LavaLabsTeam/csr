@@ -27,7 +27,8 @@
             "photo": "Photo",
             "about": "About",
             "ableToTravel": "Able To Travel",
-            "location": "Location"
+            "location": "Location",
+            "category": "Category"
         }
     }
 }

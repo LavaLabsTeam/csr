@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "merchantPackage",
+            "otherEntityName": "merchantPackage",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180322031952",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "merchant_package_photo",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

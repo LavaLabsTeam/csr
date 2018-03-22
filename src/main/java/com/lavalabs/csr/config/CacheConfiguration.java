@@ -46,6 +46,8 @@ public class CacheConfiguration {
             cm.createCache(com.lavalabs.csr.domain.Merchant.class.getName(), jcacheConfiguration);
             cm.createCache(com.lavalabs.csr.domain.UserMerchant.class.getName(), jcacheConfiguration);
             cm.createCache(com.lavalabs.csr.domain.MerchantPackage.class.getName(), jcacheConfiguration);
+            cm.createCache(com.lavalabs.csr.domain.PackageOrder.class.getName(), jcacheConfiguration);
+            cm.createCache(com.lavalabs.csr.domain.MerchantPackagePhoto.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

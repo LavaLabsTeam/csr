@@ -39,27 +39,19 @@ public class SearchService {
     }
 
 
-    public SearchResponseVM search(String query, String location, boolean isAdminSearch){
+    public SearchResponseVM search(Long categoryId, String name, String location){
         SearchResponseVM result = new SearchResponseVM();
 
-        if(StringUtils.isNotEmpty(query)){
-            // Get all the Merchants
-            List<Merchant> merchants = merchantRepository.searchMerchant(query.toLowerCase());
-            if(!CollectionUtils.isEmpty(merchants)){
-                result.setMerchants(merchants);
-            }
+        if(categoryId != null){
 
+            if(StringUtils.isNotEmpty(name) || StringUtils.isNotEmpty(location)){
+                // Get all the Merchants
+                String lowerCaseName = StringUtils.isNotEmpty(name) ? name.toLowerCase() : "";
+                String lowerCaseLocation = StringUtils.isNotEmpty(location) ? location.toLowerCase() : "";
 
-            List<Category> categories = categoryRepository.searchCategory(query.toLowerCase());
-            if(!CollectionUtils.isEmpty(categories)){
-                result.setCategories(categories);
-            }
-
-            if(!isAdminSearch){
-                // If not admin search also search for packages
-                List<MerchantPackage> merchantPackages = merchantPackageRepository.searchMerchantPackage(query.toLowerCase());
-                if(!CollectionUtils.isEmpty(merchantPackages)){
-                    result.setMerchantPackages(merchantPackages);
+                List<Merchant> merchants = merchantRepository.searchMerchant(lowerCaseName, lowerCaseLocation);
+                if(!CollectionUtils.isEmpty(merchants)){
+                    result.setMerchants(merchants);
                 }
             }
         }

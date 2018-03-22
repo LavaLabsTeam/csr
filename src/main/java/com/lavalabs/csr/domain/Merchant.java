@@ -65,6 +65,9 @@ public class Merchant implements Serializable {
     @Column(name = "location")
     private String location;
 
+    @ManyToOne
+    private Category category;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -254,6 +257,19 @@ public class Merchant implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Merchant category(Category category) {
+        this.category = category;
+        return this;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
