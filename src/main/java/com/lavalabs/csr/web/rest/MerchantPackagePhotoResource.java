@@ -104,6 +104,18 @@ public class MerchantPackagePhotoResource {
 
 
     /**
+     * GET  /merchant-package-photos : get all the merchantPackagePhotos.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of merchantPackagePhotos in body
+     */
+    @GetMapping("/merchant-package-photos-by-merchant/:merchantId")
+    @Timed
+    public List<MerchantPackagePhoto> getAllMerchantPackagePhotosByMerchant(@PathVariable Long merchantId) {
+        log.debug("REST request to get all MerchantPackagePhotos");
+        return merchantPackagePhotoService.findAllByMerchantId(merchantId);
+    }
+
+    /**
      * GET  /merchant-package-photos/:id : get the "id" merchantPackagePhoto.
      *
      * @param id the id of the merchantPackagePhoto to retrieve

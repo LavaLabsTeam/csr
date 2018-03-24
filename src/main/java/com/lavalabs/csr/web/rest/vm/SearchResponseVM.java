@@ -9,8 +9,7 @@ import java.util.List;
 public class SearchResponseVM {
 
     private List<Merchant> merchants;
-    private List<Category> categories;
-    private List<MerchantPackage> merchantPackages;
+
 
     public List<Merchant> getMerchants() {
         return merchants;
@@ -18,21 +17,5 @@ public class SearchResponseVM {
 
     public void setMerchants(List<Merchant> merchants) {
         this.merchants = merchants;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
-    public List<MerchantPackage> getMerchantPackages() {
-        return merchantPackages;
-    }
-
-    public void setMerchantPackages(List<MerchantPackage> merchantPackages) {
-        this.merchantPackages = merchantPackages;
     }
 }

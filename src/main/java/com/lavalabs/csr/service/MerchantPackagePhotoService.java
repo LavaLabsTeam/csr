@@ -20,8 +20,11 @@ public class MerchantPackagePhotoService {
 
     private final MerchantPackagePhotoRepository merchantPackagePhotoRepository;
 
-    public MerchantPackagePhotoService(MerchantPackagePhotoRepository merchantPackagePhotoRepository) {
+    private final MerchantPackageService merchantPackageService;
+
+    public MerchantPackagePhotoService(MerchantPackagePhotoRepository merchantPackagePhotoRepository, MerchantPackageService merchantPackageService) {
         this.merchantPackagePhotoRepository = merchantPackagePhotoRepository;
+        this.merchantPackageService = merchantPackageService;
     }
 
     /**
@@ -70,5 +73,9 @@ public class MerchantPackagePhotoService {
 
     public List<MerchantPackagePhoto> findAllByMerchantPackageId(Long merchantPackageId) {
         return merchantPackagePhotoRepository.findAllByMerchantPackageId(merchantPackageId);
+    }
+
+    public List<MerchantPackagePhoto> findAllByMerchantId(Long merchantId) {
+        return null;
     }
 }
