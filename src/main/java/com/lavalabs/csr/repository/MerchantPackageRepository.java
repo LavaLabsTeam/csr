@@ -20,4 +20,7 @@ public interface MerchantPackageRepository extends JpaRepository<MerchantPackage
     List<MerchantPackage> searchMerchantPackage(@Param("query") String query);
 
     List<MerchantPackage> findAllByCategoryId(Long categoryId);
+    
+    List<MerchantPackage> findAllByMerchantId(Long merchantId);
+
 }

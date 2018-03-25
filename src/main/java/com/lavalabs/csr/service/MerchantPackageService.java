@@ -75,4 +75,8 @@ public class MerchantPackageService {
     public List<MerchantPackage> findAllByCategoryId(Long categoryId) {
         return merchantPackageRepository.findAllByCategoryId(categoryId);
     }
+
+    public List<MerchantPackage> findAllByMerchantId(Long merchantId) {
+        return merchantPackageRepository.findAllByMerchantId(merchantId);
+    }
 }
