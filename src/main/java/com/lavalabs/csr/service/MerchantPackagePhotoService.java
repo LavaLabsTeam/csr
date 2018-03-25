@@ -76,6 +76,6 @@ public class MerchantPackagePhotoService {
     }
 
     public List<MerchantPackagePhoto> findAllByMerchantId(Long merchantId) {
-        return null;
+        return merchantPackagePhotoRepository.findAllByMerchantId(merchantId);
     }
 }
