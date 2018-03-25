@@ -18,4 +18,6 @@ public interface MerchantRepository extends JpaRepository<Merchant, Long> {
 
     @Query("from Merchant m where lower(m.name) like %:name% and lower(m.location) like %:location%")
     List<Merchant> searchMerchant(@Param("name") String name,@Param("location") String location);
+
+    List<Merchant> findAllByCategoryId(Long categoryId);
 }

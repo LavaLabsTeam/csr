@@ -67,4 +67,8 @@ public class MerchantService {
         log.debug("Request to delete Merchant : {}", id);
         merchantRepository.delete(id);
     }
+
+    public List<Merchant> findAllByCategoryId(Long categoryId) {
+        return merchantRepository.findAllByCategoryId(categoryId);
+    }
 }

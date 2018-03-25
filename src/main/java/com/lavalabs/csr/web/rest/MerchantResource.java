@@ -156,4 +156,19 @@ public class MerchantResource {
         merchantService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
+
+
+    /**
+     * GET  /merchant-by-category/:categoryId : get the "categoryId" merchant.
+     *
+     * @param categoryId the id of the merchant to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the merchant, or with status 404 (Not Found)
+     */
+    @GetMapping("/merchant-by-category/{categoryId}")
+    @Timed
+    public ResponseEntity<List<Merchant>> getMerchantByCategory(@PathVariable Long categoryId) {
+        log.debug("REST request to get MerchantPackage : {}", categoryId);
+        List<Merchant> merchant = merchantService.findAllByCategoryId(categoryId);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(merchant));
+    }
 }
