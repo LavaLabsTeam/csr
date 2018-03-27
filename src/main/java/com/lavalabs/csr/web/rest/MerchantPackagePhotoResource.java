@@ -95,7 +95,7 @@ public class MerchantPackagePhotoResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of merchantPackagePhotos in body
      */
-    @GetMapping("/merchant-package-photos-by-merchant-package/:merchantPackageId")
+    @GetMapping("/merchant-package-photos-by-merchant-package/{merchantPackageId}")
     @Timed
     public List<MerchantPackagePhoto> getAllMerchantPackagePhotosByMerchantPackage(@PathVariable Long merchantPackageId) {
         log.debug("REST request to get all MerchantPackagePhotos");
@@ -108,7 +108,7 @@ public class MerchantPackagePhotoResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of merchantPackagePhotos in body
      */
-    @GetMapping("/merchant-package-photos-by-merchant/:merchantId")
+    @GetMapping("/merchant-package-photos-by-merchant/{merchantId}")
     @Timed
     public List<MerchantPackagePhoto> getAllMerchantPackagePhotosByMerchant(@PathVariable Long merchantId) {
         log.debug("REST request to get all MerchantPackagePhotos");
